@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/main_background_color"
+    android:layout_height="match_parent"
+    tools:context=".bottom_navigation.menu.notification.NotificationFragment">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar_Default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TextView_Roboto_18sp"
+            android:layout_marginStart="@dimen/margin_30_dp"
+            android:text="@string/notification" />
+
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/clearAll"
+        style="@style/TextView_Roboto_Bold_16sp"
+        android:layout_marginTop="@dimen/margin_16_dp"
+        android:layout_marginEnd="@dimen/margin_20_dp"
+        android:text="@string/clear_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layoutAnimation="@anim/right_layout_animation"
+        android:layout_marginTop="@dimen/margin_20_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clearAll" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

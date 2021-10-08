@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".registration.OTPFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/Constraint_Layout_Default">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16_dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/Title_Text_34sp"
+            android:layout_marginTop="@dimen/margin_70_dp"
+            android:text="Код"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_icon" />
+
+        <TextView
+            android:id="@+id/alertMessage"
+            android:layout_width="@dimen/margin_250_dp"
+            style="@style/TextView_Roboto_14sp"
+            android:layout_marginTop="@dimen/margin_10_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/type_code"
+            style="@style/TextView_Roboto_14sp"
+            android:layout_marginTop="30dp"
+            android:text="@string/input_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alertMessage" />
+
+        <in.aabhasjindal.otptextview.OtpTextView
+            android:id="@+id/otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10_dp"
+            android:textColor="#383838"
+            app:bar_active_color="@color/main_enable_color"
+            app:bar_error_color="@color/red"
+            app:circularflow_defaultRadius="@dimen/margin_10_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_code"
+            app:length="4"
+            app:otp_box_background="@color/white"
+            app:otp_text_size="38sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/confirm"
+            style="@style/Button_Default"
+            android:layout_marginTop="@dimen/margin_25_dp"
+            android:layout_marginStart="@dimen/margin_16_dp"
+            android:layout_marginEnd="@dimen/margin_16_dp"
+            android:enabled="false"
+            android:text="@string/confirm"
+            android:background="@drawable/button_disable_custom_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/back_icon"
+            app:layout_constraintTop_toBottomOf="@+id/otp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

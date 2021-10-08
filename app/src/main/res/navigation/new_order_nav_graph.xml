@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_order_nav_graph"
+    app:startDestination="@id/orderFragment2">
+    <fragment
+        android:id="@+id/orderFragment2"
+        android:name="com.example.neocafewaiterapplication.bottom_navigation.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+</navigation>

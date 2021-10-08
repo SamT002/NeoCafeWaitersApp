@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background_color"
+    android:orientation="vertical"
+    tools:context=".bottom_navigation.order.OrderFragment">
+
+   <com.google.android.material.appbar.AppBarLayout
+       style="@style/Toolbar_Default">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           style="@style/Constraint_Layout_Default">
+
+           <ImageView
+               android:id="@+id/user"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="@dimen/margin_10_dp"
+               android:src="@drawable/ic_usercircle"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageView
+               android:id="@+id/notification"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginEnd="@dimen/margin_10_dp"
+               android:src="@drawable/ic_bellsimple"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               style="@style/TextView_Roboto_18sp"
+               android:text="Заказы"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toStartOf="@+id/notification"
+               app:layout_constraintStart_toEndOf="@+id/user"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           >
+
+
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </com.google.android.material.appbar.AppBarLayout>
+
+</LinearLayout>

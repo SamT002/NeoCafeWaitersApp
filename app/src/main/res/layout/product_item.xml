@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="16dp"
+    style="@style/Product_Card_View">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Constraint_Layout_Default"
+        android:background="@color/card_view_background">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="@dimen/width_200_dp"
+            style="@style/TextView_Roboto_Thin_16sp"
+            android:layout_marginStart="@dimen/margin_20_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Кофе" />
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/TextView_Roboto_Thin_16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/margin_20_dp"
+            tools:text="250c" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
