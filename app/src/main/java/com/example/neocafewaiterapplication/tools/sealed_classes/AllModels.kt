@@ -2,6 +2,7 @@ package com.example.neocafewaiterapplication.tools.sealed_classes
 
 import java.io.Serializable
 
+// без комментариев.........
 sealed class AllModels : Serializable {
 
     data class Menu(val icon:Int, val category:String): AllModels()

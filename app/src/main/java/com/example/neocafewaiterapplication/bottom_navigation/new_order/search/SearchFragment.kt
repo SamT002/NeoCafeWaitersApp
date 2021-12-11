@@ -17,6 +17,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SearchFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+//нахой нужен?
 class SearchFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null

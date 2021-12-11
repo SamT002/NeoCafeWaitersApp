@@ -41,6 +41,7 @@ class NotificationFragment : BaseFragment<FragmentNotificationBinding>() {
 
     private fun clearAll(){
         viewModel.getList().clear()
+        //^^
         recyclerAdapter.notifyDataSetChanged()
     }
 
@@ -52,7 +53,7 @@ class NotificationFragment : BaseFragment<FragmentNotificationBinding>() {
 
         recyclerAdapter.setList(viewModel.getList())
     }
-
+ //выноси в экстеншены повторяется код , везде
     private fun setUpSwipeCallback() {
         val callback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder, ): Boolean {

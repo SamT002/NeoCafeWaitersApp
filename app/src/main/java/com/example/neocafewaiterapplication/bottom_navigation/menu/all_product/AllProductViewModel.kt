@@ -6,13 +6,10 @@ import com.example.neocafeteae1prototype.data.models.Resource
 import com.example.neocafewaiterapplication.repository.Repository
 import com.example.neocafewaiterapplication.tools.sealed_classes.AllModels
 import com.example.neocafewaiterapplication.tools.sortByCategory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class AllProductViewModel(private val repository: Repository) : ViewModel() {
-
+  //^^^^^^^^
     val list = MutableLiveData<Resource<MutableList<AllModels.Product>>>()
 
     init {
@@ -20,14 +17,20 @@ class AllProductViewModel(private val repository: Repository) : ViewModel() {
     }
 
     private fun getAllProduct() {
+        //viewModelScope используй
+        //зачем так менять диспатчеры , вообще не целесообразно менять поток , для того чтобы вдругом потоке сделать запрос
         CoroutineScope(Dispatchers.IO).launch {
-            val response = async { repository.getAllProduct() }.await()
+            val response =
+                withContext(Dispatchers.Default) { repository.getAllProduct() }
             list.postValue(response)
         }
     }
 
-
-    fun sort(category:String, list:MutableList<AllModels.Product>):MutableList<AllModels.Product>{
+ //сортировка по какому признаку?
+    fun sort(
+        category: String,
+        list: MutableList<AllModels.Product>
+    ): MutableList<AllModels.Product> {
         return list.sortByCategory(category)
     }
 

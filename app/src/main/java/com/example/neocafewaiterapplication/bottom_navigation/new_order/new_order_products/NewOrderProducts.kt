@@ -21,7 +21,7 @@ import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 
 class NewOrderProducts : BaseFragment<FragmentNewOrderProductsBinding>(), RecyclerItemClick {
-
+   //^^^^^^^
     private val mapOfCategory = mutableMapOf<String, Int>(
         "Выпечка" to R.id.bakery, "Кофе" to R.id.coffee, "Чай" to R.id.tea,
         "Напитки" to R.id.drinks, "Десерты" to R.id.desserts
@@ -37,6 +37,7 @@ class NewOrderProducts : BaseFragment<FragmentNewOrderProductsBinding>(), Recycl
         updateVisibility(viewModel.getProductsTotalPrice())
 
         with(binding) {
+            //^^6
             tableNumber.text = "Стол №${args.tableNumber}"
             takeOrder.setOnClickListener { findNavController().navigate(NewOrderProductsDirections.actionNewOrderProductsToFinalReceiptFragment()) }
 
@@ -89,6 +90,7 @@ class NewOrderProducts : BaseFragment<FragmentNewOrderProductsBinding>(), Recycl
     }
 
     fun update(method: String, name: String) { // если он меняет кол во продуктов то это
+        //^^^^ это не производительно , он будет перерисовывать заноново , используй notifyItemChange
         recyclerAdapter.notifyDataSetChanged()
         plusUpdateTotalPrice(method, name)
     }
@@ -104,6 +106,7 @@ class NewOrderProducts : BaseFragment<FragmentNewOrderProductsBinding>(), Recycl
     @SuppressLint("SetTextI18n")
     private fun updateVisibility(totalPrice: Int) { // change visibility of cardView by quantity of products
         with(binding){
+        //магическое число 0
             if (totalPrice > 0) {
                 total.text = "${viewModel.totalPrice} c"
                 takeOrder.visibility = View.VISIBLE

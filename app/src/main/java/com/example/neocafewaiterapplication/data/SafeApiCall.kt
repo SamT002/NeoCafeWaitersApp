@@ -2,6 +2,8 @@ package com.example.neocafeteae1prototype.data.models
 
 import retrofit2.HttpException
 
+
+//классное решение
 interface SafeApiCall { suspend fun <T> safeApiCall(apiCall: suspend () -> T): Resource<T> {
         return try {
             Resource.Success(apiCall.invoke())

@@ -9,7 +9,6 @@ import com.example.neocafewaiterapplication.databinding.ProductItemBinding
 import com.example.neocafewaiterapplication.tools.delegates.RecyclerItemClick
 import com.example.neocafewaiterapplication.tools.sealed_classes.AllModels
 
-
 class AllProductsRecyclerAdapter(private val click: RecyclerItemClick?) :
     RecyclerView.Adapter<AllProductsRecyclerAdapter.ViewHolder>() {
 

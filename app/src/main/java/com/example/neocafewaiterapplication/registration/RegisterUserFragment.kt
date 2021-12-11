@@ -27,6 +27,7 @@ class RegisterUserFragment : BaseFragment<FragmentRegisterUserBinding>() {
 
         with(binding) {
             birthday.addTextChangedListener {
+                //магические числа
                 if (it?.length!! >= 10 && name.text.length >= 3 && surname.text.length >= 3) {
                     button.apply {
                         isEnabled = true
@@ -45,6 +46,7 @@ class RegisterUserFragment : BaseFragment<FragmentRegisterUserBinding>() {
                     }
                 }
             }
+            //кнопка button
             button.setOnClickListener {
                 val name = name.text.toString()
                 val surname = surname.text.toString()

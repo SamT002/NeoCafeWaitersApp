@@ -25,6 +25,7 @@ class RegisterNumberFragment : BaseFragment<FragmentRegisterNumberBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.numberEditText.addTextChangedListener {
+            //преобразуй в when , чиать трудно
             if (it?.length == 11) {
                 binding.next.apply {
                     isEnabled = true
