@@ -10,9 +10,12 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-val retrofitModule = module{
 
+//назови networkModule
+val retrofitModule = module{
+    //зачем каждый раз создавать клиент?
     factory { getOkHttp() }
+    //зачем каждый раз создавать билдер?
     factory { getRetrofitBuilder(okHttpClient = get()) }
     single { getMenuApi(retrofit = get()) }
     factory { Repository(menuAPi = get(), registrationAPI = get()) }
@@ -29,6 +32,7 @@ fun getMenuApi(retrofit: Retrofit):Menu_API {
 
 
 fun getRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit {
+    //apply
     return Retrofit.Builder()
         .baseUrl(Consts.BASE_URL)
         .client(okHttpClient)

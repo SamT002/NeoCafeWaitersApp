@@ -23,7 +23,7 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import java.util.concurrent.TimeUnit
-
+/////ресурники
 class OTPFragment : Fragment() {
 
     private var binding: FragmentOTPBinding? = null

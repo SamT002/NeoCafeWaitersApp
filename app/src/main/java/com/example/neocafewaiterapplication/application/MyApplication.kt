@@ -11,7 +11,6 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import org.koin.dsl.module
 
-
 class MyApplication : Application() {
 
     override fun onCreate() {
@@ -23,7 +22,8 @@ class MyApplication : Application() {
 
     }
 }
-
+//почему модуль зависимостей ,  в классе приложения
+//название модуля "мой модуль"))
 val myModule = module {
     viewModel { AllProductViewModel(get()) }
     viewModel { NewOrderProductsViewModel(get()) }

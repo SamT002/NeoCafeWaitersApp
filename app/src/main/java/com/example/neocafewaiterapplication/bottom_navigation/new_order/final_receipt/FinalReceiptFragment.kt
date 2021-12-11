@@ -38,6 +38,7 @@ class FinalReceiptFragment : BaseFragment<FragmentFinalReceiptBinding>(), Second
         setUpSwipeCallback()
         printTotalPrice()
         binding.takeOrder.setOnClickListener {
+            //^^^
             DoneCustomAlertDialog("Ваш заказ оформлен").show(childFragmentManager, "TAG")
             viewModel.finishList.clear()
         }
@@ -45,6 +46,7 @@ class FinalReceiptFragment : BaseFragment<FragmentFinalReceiptBinding>(), Second
 
     private fun setUpRecycler() {
         binding.recycler.apply {
+            //^^^
             layoutManager = LinearLayoutManager(requireContext())
             adapter = recyclerAdapter
         }
@@ -53,7 +55,7 @@ class FinalReceiptFragment : BaseFragment<FragmentFinalReceiptBinding>(), Second
         })
     }
 
-    private fun setUpSwipeCallback() {
+    private fun setUpSwipeCallback() {//^^^
         val callback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder, ): Boolean {
                 return false
@@ -63,6 +65,7 @@ class FinalReceiptFragment : BaseFragment<FragmentFinalReceiptBinding>(), Second
                 actionState: Int,
                 isCurrentlyActive: Boolean,
             ) {
+                //aplly
                 RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                     .addSwipeLeftBackgroundColor(Color.parseColor(Consts.RED))
                     .addActionIcon(R.drawable.ic_trash)
@@ -78,6 +81,7 @@ class FinalReceiptFragment : BaseFragment<FragmentFinalReceiptBinding>(), Second
 
                 when (direction) {
                     ItemTouchHelper.LEFT -> {
+                        //^^
                         CustomAlertDialog("Удалить ${product.title} из заказа?"
                         ) { deleteElementFromList(position) }.show(childFragmentManager, "TAG")
                     }
@@ -101,6 +105,8 @@ class FinalReceiptFragment : BaseFragment<FragmentFinalReceiptBinding>(), Second
 
     @SuppressLint("SetTextI18n")
     override fun clickListener(method: String, model:AllModels.Product) { // Когда в recycler adapter изменяется кол во это трекается и изменяет итоговую цену
+        // константы - ресурсники
+        //если условие в одну строку , фигурные скопки можно опустить
         if (method == "-"){
             viewModel.totalPrice -= model.price
         }else{

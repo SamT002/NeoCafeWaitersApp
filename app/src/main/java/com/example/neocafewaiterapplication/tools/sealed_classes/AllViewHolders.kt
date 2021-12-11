@@ -9,6 +9,7 @@ import com.example.neocafewaiterapplication.databinding.*
 import com.example.neocafewaiterapplication.tools.Consts
 import com.example.neocafewaiterapplication.tools.changeColor
 
+//это плохо...
 sealed class AllViewHolders(binding: ViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
     class MenuViewHolder(val binding: MenuItemBinding) : AllViewHolders(binding) {

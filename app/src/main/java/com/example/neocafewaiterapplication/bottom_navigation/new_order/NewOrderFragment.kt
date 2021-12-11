@@ -23,6 +23,7 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>(), RecyclerItemCl
 
     private val recyclerViewAdapter by lazy {MainRecyclerViewAdapter(this)}
     private val args by navArgs<NewOrderFragmentArgs>()
+    //если нужно шэйрить вьюмодель есть делегат shareViewModel , используй его
     private val shareViewModel: TabelViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,6 +34,7 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>(), RecyclerItemCl
 
     private fun setUpRecyclerView() {
         binding.recycler.apply {
+            //^^^^^
             layoutManager = LinearLayoutManager(requireContext())
             adapter = recyclerViewAdapter
         }
@@ -45,6 +47,8 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>(), RecyclerItemCl
         model as AllModels.Table
         if (model.isFree) {
             findNavController().navigate(NewOrderFragmentDirections.actionNewOrderFragmentToNewOrderMenu(model.table_number))
+
+            //ресусники
         } else "Стол занят".clearAll(requireContext(), Toast.LENGTH_LONG)
     }
 
@@ -55,7 +59,7 @@ class NewOrderFragment : BaseFragment<FragmentNewOrderBinding>(), RecyclerItemCl
     override fun setUpAppBar() {
         with(binding.include){
             notification.setOnClickListener { findNavController().navigate(NewOrderFragmentDirections.actionNewOrderFragmentToNotificationFragment3()) }
-            user.setOnClickListener { findNavController().navigate(NewOrderFragmentDirections.actionNewOrderFragmentToUserFragment2()) }
+            user.setOnClickListener { findNavController().navigate(NewOrderFragmentDirections.actionNewOrderFragmentToUserFragment2()) } //^^^
 
         }
 }

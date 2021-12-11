@@ -16,6 +16,7 @@ class RegistrationViewModel(private val repository: Repository) : ViewModel() {
     val token = MutableLiveData<Resource<AllModels.Token>>()
 
     fun getToken(number: Int, uid: String) {
+        //ViewModelScope
         CoroutineScope(Dispatchers.IO).launch {
             val response = async { repository.getToken(number, uid) }.await()
             token.postValue(response)

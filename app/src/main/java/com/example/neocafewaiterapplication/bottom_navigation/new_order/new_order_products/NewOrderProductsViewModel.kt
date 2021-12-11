@@ -23,6 +23,7 @@ class NewOrderProductsViewModel(private val repository: Repository) : ViewModel(
     init {getAllProduct()}
 
     private fun getAllProduct() {
+        //VieModelScope
         CoroutineScope(Dispatchers.IO).launch {
             val response = async { repository.getAllProduct() }.await()
             if (response is Resource.Success){
